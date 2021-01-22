@@ -292,7 +292,7 @@ public class AudioRecorder extends Thread {
         // The thread will
         try {
             if(!outputFile.exists()){
-                outputFile.createNewFile();
+                outputFile = new File(outputFile.getPath());
             }
             mEncodeThread = new DataEncodeThread(outputFile, bufsize);
         } catch (FileNotFoundException e) {
